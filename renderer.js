@@ -1,3 +1,4 @@
+const onlyTimeElement = document.getElementById('time');
 const timerElement = document.getElementById('timer');
 
 
@@ -21,6 +22,7 @@ let countdownSeconds = 0;
 
 // Deixa o timer apagado inicialmente
 timerElement.style.display = 'none';
+onlyTimeElement.style.display = 'none';
 
 function newStartTimer() {
 
@@ -34,7 +36,8 @@ function newStartTimer() {
         const dayOfWeek = now.getDay();
 
         const time = {
-            timeString: `${hours}:${minutes}:${seconds}`,
+            fullTimeString: `${hours}:${minutes}:${seconds}`,
+            timeString: `${hours}:${minutes}`,
             stopwatch: `${String(59 - Number(minutes)).padStart(2, '0')}:${String(59 - Number(seconds)).padStart(2, '0')}`,
             dayOfWeek,
             hours,
@@ -43,8 +46,9 @@ function newStartTimer() {
         };
 
         // Default time
+        onlyTimeElement.innerText = time.timeString;
         timerElement.innerText = time.timeString;
-        timerElement.style.fontSize = '20rem';
+        timerElement.style.fontSize = '25rem';
         timerElement.className = 'white';
 
         if (dayOfWeek === 0) {
@@ -64,25 +68,30 @@ function newStartTimer() {
 
             if (thisHours == thisTimeDefaultToDay && thisMinutes <= 29) {
                 timerElement.innerText = time.timeString;
-                timerElement.style.fontSize = '20rem';
+                timerElement.style.fontSize = '25rem';
                 timerElement.className = 'white';
+                onlyTimeElement.style.display = 'none';
             } else {
                 if (thisHours == thisTimeDefaultToDay && thisMinutes >= 30) {
                     timerElement.innerText = time.stopwatch;
                     timerElement.style.fontSize = '30rem';
                     timerElement.className = 'white';
+                    onlyTimeElement.style.display = 'block';
                 }
-                if (thisHours == thisTimeDefaultToDay && thisMinutes >= 53) {
+                if (thisHours == thisTimeDefaultToDay && thisMinutes >= 54) {
                     timerElement.style.fontSize = '30rem';
                     timerElement.className = 'yellow';
+                    onlyTimeElement.style.display = 'block';
                 }
                 if (thisHours == thisTimeDefaultToDay && thisMinutes >= 58) {
                     timerElement.style.fontSize = '30rem';
                     timerElement.className = 'red';
+                    onlyTimeElement.style.display = 'block';
                 } else if (thisHours == (thisTimeDefaultToDay + 1) && thisMinutes >= 0) {
                     timerElement.innerText = `–${time.minutes + ':' + time.seconds}`;
-                    timerElement.style.fontSize = '25rem';
+                    timerElement.style.fontSize = '25rem'; // FULL TIME IS 25REM: timerElement.style.fontSize = '25rem';
                     timerElement.className = 'red blink'; // Pisca vermelho
+                    onlyTimeElement.style.display = 'block';
                 }
             }
         }

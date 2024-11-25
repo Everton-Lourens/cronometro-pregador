@@ -1,18 +1,27 @@
 body {
-    margin: 0;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-    color: white;
-  }
+  margin: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-items: center;
+  height: 90vh;
+  font-family: Arial, sans-serif;
+  color: white;
+}
   
   #timer {
     font-size: 30rem;
     font-weight: bold;
     text-align: center;
+  }
+
+  #time {
+    font-size: 9rem;
+    font-weight: bold;
+    text-align: center;
+    color: rgb(185, 185, 185)
   }
   
   .yellow {
