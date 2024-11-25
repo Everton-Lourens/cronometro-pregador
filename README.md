@@ -17,7 +17,7 @@ Este aplicativo foi desenvolvido para auxiliar os pregadores a gerenciarem o tem
 **OBS::: SE COLOCAR PARA INICIAR ÀS 19:00, VAI APARECER O CRONÓMETRO APENAS ÀS 19:30 (para finalizar às 20:00), ANTES DISSO APARECE APENAS O RELÓGIO!!**
 
 1. O DEVELOPER define o tempo inicial da pregação via código js.
-2. O cronômetro inicia automaticamente: Se colocar 19 o início, ele vai começar 19:30 mas da pra mudar conforme sua vontade.
+2. O cronômetro inicia automaticamente: Se colocar "19" na function "startThisTime('19')", ele vai começar 19:30 mas da pra mudar conforme sua vontade.
 3. Quando o tempo restante for menor que 7 minutos:
    - A cor do cronômetro muda para **amarelo**.
 4. Quando o tempo restante for menor que 2 minutos:
