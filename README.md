@@ -10,7 +10,7 @@ Este aplicativo foi desenvolvido para auxiliar os pregadores a gerenciarem o tem
 ## Tecnologias Utilizadas
 
 - Linguagem de programação: **Node.js**
-- Frontend básico com **HTML**, **CSS** e **JavaScript** para a exibição do cronômetro.
+- Frontend básico com **Electron**, **HTML**, **CSS** e **JavaScript** para a exibição do cronômetro.
 
 ## Como Funciona
 
