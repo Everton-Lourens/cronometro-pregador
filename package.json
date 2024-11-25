@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "cronometro-pregador",
-=======
-  "name": "timer-electron",
->>>>>>> c554f831071bd15cc2c0f2cdfe39ca5eb1305d69
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
@@ -14,11 +10,7 @@
     "appId": "com.timer.electron",
     "win": {
       "target": "nsis",
-<<<<<<< HEAD
       "icon": "assets/icons/sand-clock"
-=======
-      "icon": "build/icon.ico"
->>>>>>> c554f831071bd15cc2c0f2cdfe39ca5eb1305d69
     }
   },
   "devDependencies": {
