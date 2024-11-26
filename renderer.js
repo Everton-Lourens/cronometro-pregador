@@ -1,6 +1,7 @@
 const onlyTimeElement = document.getElementById('time');
 const timerElement = document.getElementById('timer');
-
+const dotenv = require('dotenv');
+dotenv.config();
 
 const logElement = document.createElement('div');
 logElement.style.color = 'white';
@@ -14,7 +15,6 @@ function logToDOM(message) {
 }
 // Use em vez de console.log:
 //logToDOM("Meu log no DOM!");
-
 
 let interval;
 let countdownSeconds = 0;
@@ -51,6 +51,12 @@ function newStartTimer() {
         timerElement.style.fontSize = '25rem';
         timerElement.className = 'white';
 
+        if (process.env.IS_DEV == 'true') {
+            process.env.DEV_TIME = (process.env.DEV_TIME == 'false') ? hours : process.env.DEV_TIME;
+            //process.env.DEV_TIME = (Number(hours) - 1) // "descommit" para ver o tempo em excesso
+            startThisTime(process.env.DEV_TIME);
+        }
+
         if (dayOfWeek === 0) {
             // is Sunday
             startThisTime('19')
@@ -78,7 +84,7 @@ function newStartTimer() {
                     timerElement.className = 'white';
                     onlyTimeElement.style.display = 'block';
                 }
-                if (thisHours == thisTimeDefaultToDay && thisMinutes >= 54) {
+                if (thisHours == thisTimeDefaultToDay && thisMinutes >= 55) {
                     timerElement.style.fontSize = '30rem';
                     timerElement.className = 'yellow';
                     onlyTimeElement.style.display = 'block';
@@ -87,7 +93,7 @@ function newStartTimer() {
                     timerElement.style.fontSize = '30rem';
                     timerElement.className = 'red';
                     onlyTimeElement.style.display = 'block';
-                } else if (thisHours == (thisTimeDefaultToDay + 1) && thisMinutes >= 0) {
+                } else if ((thisHours == (thisTimeDefaultToDay + 1) && thisMinutes >= 0)) {
                     timerElement.innerText = `–${time.minutes + ':' + time.seconds}`;
                     timerElement.style.fontSize = '25rem'; // FULL TIME IS 25REM: timerElement.style.fontSize = '25rem';
                     timerElement.className = 'red blink'; // Pisca vermelho
