@@ -48,7 +48,7 @@ function newStartTimer() {
         // Default time
         onlyTimeElement.innerText = time.timeString;
         timerElement.innerText = time.timeString;
-        timerElement.style.fontSize = '25rem';
+        timerElement.style.fontSize = '15rem';
         timerElement.className = 'white';
 
         if (process.env.IS_DEV == 'true') {
