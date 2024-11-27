@@ -60,14 +60,14 @@ function newStartTimer() {
         if (dayOfWeek === 0 || true) {
             // is Sunday
             if (Number(hours) < 13)
-                startThisTime('11');
+                startThisTime('10'); // finish at 11:00
             else
-                startThisTime('19');
+                startThisTime('19'); // finish at 20:00
         }
 
         if (dayOfWeek === 2 || dayOfWeek === 4) {
             // is Tuesday or Wednesday
-            startThisTime('20');
+            startThisTime('20');  // finish at 21:00
         }
 
         function startThisTime(timeDefaultToDay) {
