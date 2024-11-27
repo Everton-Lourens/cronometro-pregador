@@ -57,7 +57,7 @@ function newStartTimer() {
             startThisTime(process.env.DEV_TIME);
         }
 
-        if (dayOfWeek === 0 || true) {
+        if (dayOfWeek === 0) {
             // is Sunday
             if (Number(hours) < 13)
                 startThisTime('10'); // finish at 11:00
