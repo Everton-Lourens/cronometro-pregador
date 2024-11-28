@@ -78,27 +78,32 @@ function newStartTimer() {
             if (thisHours == thisTimeDefaultToDay && thisMinutes <= 29) {
                 timerElement.innerText = time.timeString;
                 timerElement.style.fontSize = '15rem';
+                timerElement.style.textDecoration = 'underline'; // Adiciona o sublinhado
                 timerElement.className = 'white';
                 onlyTimeElement.style.display = 'none';
             } else {
                 if (thisHours == thisTimeDefaultToDay && thisMinutes >= 30) {
                     timerElement.innerText = time.stopwatch;
                     timerElement.style.fontSize = '15rem';
+                    timerElement.style.textDecoration = 'none'; // Remove o sublinhado
                     timerElement.className = 'white';
                     onlyTimeElement.style.display = 'block';
                 }
                 if (thisHours == thisTimeDefaultToDay && thisMinutes >= 55) {
                     timerElement.style.fontSize = '15rem';
+                    timerElement.style.textDecoration = 'none'; // Remove o sublinhado
                     timerElement.className = 'yellow';
                     onlyTimeElement.style.display = 'block';
                 }
                 if (thisHours == thisTimeDefaultToDay && thisMinutes >= 58) {
                     timerElement.style.fontSize = '15rem';
+                    timerElement.style.textDecoration = 'none'; // Remove o sublinhado
                     timerElement.className = 'red';
                     onlyTimeElement.style.display = 'block';
                 } else if ((thisHours == (thisTimeDefaultToDay + 1) && thisMinutes >= 0)) {
                     timerElement.innerText = `–${time.minutes + ':' + time.seconds}`;
                     timerElement.style.fontSize = '15rem'; // FULL TIME IS 25REM: timerElement.style.fontSize = '25rem';
+                    timerElement.style.textDecoration = 'none'; // Remove o sublinhado
                     timerElement.className = 'red blink'; // Pisca vermelho
                     onlyTimeElement.style.display = 'block';
                 }
