@@ -50,6 +50,8 @@ function newStartTimer() {
         timerElement.innerText = time.timeString;
         timerElement.style.fontSize = '15rem';
         timerElement.className = 'white';
+        timerElement.style.textDecoration = 'underline'; // Adiciona o sublinhado
+
 
         if (process.env.IS_DEV == 'true') {
             process.env.DEV_TIME = (process.env.DEV_TIME == 'false') ? hours : process.env.DEV_TIME;
